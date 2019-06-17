@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "gistcard",
+  "alias": ["gistcard.now.sh"],
+  "builds": [
+    { "src": "/img/Cargo.toml", "use": "@now/rust@canary" },
+    { "src": "/html/Cargo.toml", "use": "@now/rust@canary" }
+  ],
+  "routes": [
+    { "src": "/img/(.+).png", "dest": "/img/gistcard_img?id=$1" },
+    { "src": "/(.+)", "dest": "/html/gistcard_html?id=$1" }
+  ]
+}

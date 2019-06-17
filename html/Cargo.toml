@@ -1,0 +1,14 @@
+[package]
+name = "gistcard_html"
+version = "0.1.0"
+authors = ["Mike Engel <mike@mike-engel.com>"]
+edition = "2018"
+
+[dependencies]
+reqwest = "0.9"
+log = "0.4"
+simplelog = "0.5"
+now_lambda = "*"
+http = "0.1"
+gistcard = { path = "../gist" }
+urlencoding = "1"

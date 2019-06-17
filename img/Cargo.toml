@@ -1,0 +1,17 @@
+[package]
+name = "gistcard_img"
+version = "0.1.0"
+authors = ["Mike Engel <mike@mike-engel.com>"]
+edition = "2018"
+
+[dependencies]
+reqwest = "0.9"
+http = "0.1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+log = "0.4"
+simplelog = "0.5"
+now_lambda = "*"
+base64 = "0.10"
+urlencoding = "1"
+gistcard = { path = "../gist" }

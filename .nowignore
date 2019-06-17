@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+
+target/
+**/*.rs.bk
+
+/Cargo.toml
+/Cargo.lock

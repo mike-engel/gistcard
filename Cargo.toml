@@ -1,0 +1,7 @@
+[workspace]
+
+members = [
+  "html",
+  "img",
+  "gist"
+]
