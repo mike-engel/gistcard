@@ -1,6 +1,6 @@
 # gistcard
 
-> Better gist previews on twitter and other open graph applications
+> Show better gist previews in twitter with a code snippet and a link to the gist
 
 `gistcard` is a better way to share gists (until github does this themselves 😉). It shows a snippet of the gist as a preview using [carbon](https://carbon.now.sh) and includes a link to the gist.
 
@@ -28,8 +28,18 @@ Please note that this project is released with a [Contributor Code of Conduct](C
 
 I would love to see issues and pull requests to make this a better tool that works for people other than myself!
 
-This project only works with rust's 2018 edition. Thus, you must have version 1.31 or later. Once you have rust installed, you can then run `cargo build` to see it in action. This will download and compile all the dependencies in development mode.
+### Rust bits
+
+This project only works with rust's 2018 edition. Thus, you must have version 1.31 or later. Once you have rust installed (I recommend [rustup](https://rustup.sh)), you can then run `cargo build` to see it in action. This will download and compile all the dependencies in development mode.
 
 In theory, you can use now's [`now dev`](https://zeit.co/blog/now-dev), but as of this writing, the rust support still needs some work. In the meantime, you could build a simple binary that uses the library, or you can deploy it to your own [`zeit`](https://zeit.co) account. If you need help, please submit an issue and I'll be happy to try and help you out.
+
+### UI bits
+
+The UI is built with [Gatsby](https://gatsby.org), [Styled Components](https://styled-components.com), and [typescript](https://typescriptlang.org). To start, run `npm install` from within the site folder to download all of the dependencies.
+
+If you wish to use `now dev`, run that from the root directory. This should then be available at [http://localhost:3000](http://localhost:3000).
+
+To use Gatsby's develop mode, run `npm run dev` from wihin the `site` directory. The URL will be printed to the console, but it is usually [http://localhost:8000](http://localhost:8000).
 
 ## [License](LICENSE.md)

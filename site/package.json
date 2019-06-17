@@ -1,0 +1,56 @@
+{
+  "name": "gistcard-site",
+  "private": true,
+  "description": "A simple UI for gistcard",
+  "version": "1.0.0",
+  "author": "Mike Engel <mike@mike-engel.com>",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.1",
+    "gatsby": "^2.8.5",
+    "gatsby-plugin-offline": "^2.1.1",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-styled-components": "^3.0.7",
+    "gatsby-plugin-typescript": "^2.0.15",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "styled-components": "^4.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.7",
+    "@types/react": "^16.8.19",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-helmet": "^5.0.8",
+    "@types/styled-components": "^4.1.16",
+    "husky": "^2.4.1",
+    "lint-staged": "^8.2.1",
+    "prettier": "^1.18.0",
+    "typescript": "^3.5.1"
+  },
+  "keywords": [
+    "gatsby",
+    "typescript"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "typecheck": "tsc --noEmit",
+    "now-build": "npm run build"
+  },
+  "lint-staged": {
+    "*.tsx?": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mike-engel/gistcard"
+  },
+  "bugs": {
+    "url": "https://github.com/mike-engel/gistcard/issues"
+  }
+}

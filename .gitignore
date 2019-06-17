@@ -1,2 +1,9 @@
-/target
+.DS_Store
+Thumbs.db
+
+target/
 **/*.rs.bk
+
+node_modules/
+public/
+.cache/

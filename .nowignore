@@ -6,3 +6,7 @@ target/
 
 /Cargo.toml
 /Cargo.lock
+
+node_modules/
+public/
+.cache/
