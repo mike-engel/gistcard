@@ -11,6 +11,7 @@ import styled from "styled-components";
 import { Stylable } from "../types/component.types";
 import { Preview } from "../components/molecules/preview.component";
 import { spacing } from "../utils/spacing.utils";
+import { pSBC, lightGrey, hexToRgba, black } from "../components/atoms/color.component";
 
 type Props = Stylable;
 
@@ -52,5 +53,8 @@ export default styled(RawIndexPage)`
     max-width: 504px;
     width: auto;
     height: auto;
+    border: 1px solid ${pSBC(0.75, lightGrey)};
+    box-shadow: 0 2px 4px ${hexToRgba(black, 0.15)};
+    border-radius: ${spacing(0.5)}px;
   }
 `;
