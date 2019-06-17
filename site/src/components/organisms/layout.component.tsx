@@ -32,7 +32,7 @@ const GlobalStyles = createGlobalStyle`
     font-style: normal;
     font-weight: 400;
     font-family: ${fontFamily};
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.4;
   }
 

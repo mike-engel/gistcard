@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Heading, FontWeight } from "../atoms/typography.component";
 import { Stylable } from "../../types/component.types";
 import { spacing, maxWidth } from "../../utils/spacing.utils";
-import { darkGrey, black } from "../atoms/color.component";
+import { darkGrey } from "../atoms/color.component";
 
 type Props = Stylable & {
   children?: ReactNode;
@@ -32,10 +32,5 @@ export const Header = styled(RawHeader)`
 
   ${Heading} + ${Heading} {
     margin-top: 0 !important;
-  }
-
-  ${Heading}:first-child {
-    border-top: ${spacing(0.5)}px solid ${black};
-    padding-top: ${spacing(0.5)}px;
   }
 `;

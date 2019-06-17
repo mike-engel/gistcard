@@ -8,7 +8,7 @@ type Props = Stylable;
 
 export const RawFooter = memo(({ className }: Props) => (
   <footer className={className}>
-    <Text level={4}>
+    <Text level={5}>
       ©{new Date().getFullYear()}, Built by
       {` `}
       <ExternalLink href="https://mike-engel.com">Mike Engel</ExternalLink>

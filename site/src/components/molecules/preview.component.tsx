@@ -11,7 +11,7 @@ import {
 } from "../atoms/typography.component";
 import { Stylable } from "../../types/component.types";
 import { spacing } from "../../utils/spacing.utils";
-import { darkGrey, lightGrey, black } from "../atoms/color.component";
+import { darkGrey, lightGrey, black, hexToRgba, white, pSBC } from "../atoms/color.component";
 
 type Props = Stylable;
 
@@ -75,27 +75,29 @@ export const RawPreview = ({ className }: Props) => {
         after <code>https://gistcard.now.sh</code>. Clicking on that link will rediredct any user to
         the actual gist page.
       </Text>
-      <Text>To generate a URL, enter the gist id or the url of the gist below.</Text>
-      <label htmlFor="id">
-        <Span color={darkGrey} level={4}>
-          Gist ID or URL
-        </Span>
-        <input
-          ref={inputRef}
-          type="text"
-          name="id"
-          id="id"
-          placeholder="2eb2a78488e7470bdb0377f4387f8240"
-          value={id}
-          onChange={evt => setId(evt.currentTarget.value)}
-        />
-      </label>
-      <pre aria-live="polite">
-        <ExternalLink href={url}>{url}</ExternalLink>
-        <button onClick={() => copyText(inputRef.current, setCopied)}>
-          {copied ? "Copied!" : "Copy link"}
-        </button>
-      </pre>
+      <fieldset>
+        <Heading level={3}>Create a GistCard</Heading>
+        <label htmlFor="id">
+          <Span color={darkGrey} level={5}>
+            Gist ID or URL
+          </Span>
+          <input
+            ref={inputRef}
+            type="text"
+            name="id"
+            id="id"
+            placeholder="2eb2a78488e7470bdb0377f4387f8240"
+            value={id}
+            onChange={evt => setId(evt.currentTarget.value)}
+          />
+        </label>
+        <pre aria-live="polite">
+          <ExternalLink href={url}>{url}</ExternalLink>
+          <button onClick={() => copyText(inputRef.current, setCopied)}>
+            {copied ? "Copied!" : "Copy link"}
+          </button>
+        </pre>
+      </fieldset>
     </div>
   );
 };
@@ -104,9 +106,17 @@ export const Preview = styled(RawPreview)`
   margin-top: ${spacing(5)}px !important;
   padding-top: 1px;
 
+  fieldset {
+    border: 1px solid ${pSBC(0.75, lightGrey)};
+    background: ${white};
+    box-shadow: 0 2px 4px ${hexToRgba(black, 0.15)};
+    border-radius: ${spacing(0.5)}px;
+    padding: ${spacing(2)}px;
+  }
+
   label {
     display: block;
-    margin: ${spacing(2)}px 0;
+    margin: 0 0 ${spacing(2)}px 0;
 
     span {
       display: block;
@@ -119,9 +129,9 @@ export const Preview = styled(RawPreview)`
     margin-top: ${spacing(1)}px !important;
     padding: ${spacing(1.5)}px ${spacing(2)}px;
     border-radius: ${spacing(0.5)}px;
-    border: 1px solid ${lightGrey};
+    border: 1px solid ${pSBC(0.6, lightGrey)};
     font-family: ${fontFamily};
-    font-size: ${fontSize.level3};
+    font-size: ${fontSize.level4};
   }
 
   label + pre {
@@ -133,6 +143,7 @@ export const Preview = styled(RawPreview)`
     align-items: top;
     justify-content: space-between;
     white-space: pre-wrap;
+    margin: 0;
 
     ${ExternalLink} {
       flex-shrink: 1;
@@ -142,7 +153,7 @@ export const Preview = styled(RawPreview)`
   button {
     appearance: none;
     font-family: ${fontFamily};
-    font-size: ${fontSize.level3};
+    font-size: ${fontSize.level4};
     color: ${black};
     border: none;
     font-weight: ${FontWeight.Bold};

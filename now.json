@@ -13,8 +13,8 @@
   ],
   "routes": [
     { "src": "/", "dest": "/site/index.html" },
-    { "src": "/((.+).(js|json|css|png))", "dest": "/site/$1" },
     { "src": "/img/(.+).png", "dest": "/img/gistcard_img?id=$1" },
+    { "src": "/((.+).(js|json|css|png))", "dest": "/site/$1" },
     { "src": "/(.+)", "dest": "/html/gistcard_html?id=$1" }
   ]
 }

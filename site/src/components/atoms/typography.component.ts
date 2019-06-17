@@ -26,8 +26,8 @@ type TypeProps = {
   color?: string;
   fontWeight?: FontWeight;
   fontStyle?: FontStyle;
-  level?: 1 | 2 | 3 | 4 | 5 | "inherit";
-  displayLevel?: 1 | 2 | 3 | 4 | 5 | "inherit";
+  level?: 1 | 2 | 3 | 4 | 5 | 6 | "inherit";
+  displayLevel?: 1 | 2 | 3 | 4 | 5 | 6 | "inherit";
 };
 
 export type HeadingProps = TypeProps & HTMLProps<HTMLDivElement>;
@@ -41,11 +41,12 @@ export const fontFamily =
 
 // Perfect fourth
 export const fontSize: FontSize = {
-  level1: "2.0000rem",
-  level2: "1.4375rem",
-  level3: "1.0000rem",
-  level4: "0.7500rem",
-  level5: "10px",
+  level1: "2.369rem",
+  level2: "1.777rem",
+  level3: "1.333rem",
+  level4: "1.000rem",
+  level5: "0.750rem",
+  level6: "10px",
   inherit: "1em"
 };
 
@@ -56,7 +57,7 @@ export const Heading = styled("div").attrs<HeadingProps>(({ level }) => ({
   max-width: 40em;
   color: ${propOr(black, "color")};
   font-size: ${({ level, displayLevel }) => fontSize[`level${displayLevel || level || 1}`]};
-  font-weight: ${propOr(FontWeight.Semibold, "fontWeight")};
+  font-weight: ${propOr(FontWeight.Bold, "fontWeight")};
   font-style: ${propOr(FontStyle.Normal, "fontStyle")};
   line-height: 1.2;
   margin: 0;
@@ -70,7 +71,7 @@ export const Text = styled("p")<TextProps>`
   max-width: 40em;
   color: ${propOr(black, "color")};
   font-size: ${({ level, displayLevel }: TextProps) =>
-    fontSize[`level${displayLevel || level || 3}`]};
+    fontSize[`level${displayLevel || level || 4}`]};
   font-weight: ${propOr(FontWeight.Regular, "fontWeight")};
   font-style: ${propOr(FontStyle.Normal, "fontStyle")};
   line-height: 1.4;
@@ -94,7 +95,7 @@ export const Link = styled("a")<LinkProps>`
   text-decoration: underline;
   color: ${propOr(black, "color")};
   font-size: ${({ level, displayLevel }: LinkProps) =>
-    fontSize[`level${displayLevel || level || 3}`]};
+    fontSize[`level${displayLevel || level || 4}`]};
   font-weight: ${propOr(FontWeight.Regular, "fontWeight")};
   font-style: ${propOr(FontStyle.Normal, "fontStyle")};
   line-height: 1.2;
