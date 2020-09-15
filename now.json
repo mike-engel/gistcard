@@ -3,8 +3,8 @@
   "name": "gistcard",
   "alias": ["gistcard.now.sh"],
   "builds": [
-    { "src": "/img/Cargo.toml", "use": "@now/rust@canary" },
-    { "src": "/html/Cargo.toml", "use": "@now/rust@canary" },
+    { "src": "/img/Cargo.toml", "use": "now-rust@1" },
+    { "src": "/html/Cargo.toml", "use": "now-rust@1" },
     {
       "src": "/site/package.json",
       "use": "@now/static-build",
